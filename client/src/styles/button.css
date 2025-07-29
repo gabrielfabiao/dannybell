@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.btn {
+  @apply absolute bottom-40 left-1/2 -translate-x-1/2 bg-[#9e3333] text-sxl text-white hover:text-black py-4 px-8 rounded-lg hover:bg-red-100 transition-colors;
+}
