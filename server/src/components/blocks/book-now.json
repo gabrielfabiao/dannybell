@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blocks_book_nows",
+  "info": {
+    "displayName": "Book Now"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
