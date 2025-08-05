@@ -38,10 +38,13 @@
     "description": {
       "type": "text"
     },
-    "Menu": {
+    "menu": {
       "type": "component",
       "component": "elements.menu-item",
       "repeatable": true
+    },
+    "price": {
+      "type": "decimal"
     }
   },
   "config": {}

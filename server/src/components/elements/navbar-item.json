@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_elements_navbar_items",
+  "info": {
+    "displayName": "navbarItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "isExternal": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

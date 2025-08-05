@@ -5,13 +5,12 @@
   },
   "options": {},
   "attributes": {
-    "logoText": {
+    "logo": {
       "type": "string"
     },
     "image": {
       "type": "media",
       "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images"
       ]
