@@ -1,6 +1,14 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 body {
   background-color: rgb(23, 0, 0);
   font-family: "Montserrat";
+}
+
+html {
+  scroll-behavior: smooth;
 }

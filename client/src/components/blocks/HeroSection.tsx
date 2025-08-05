@@ -1,28 +1,42 @@
-import React from "react";
+"use client"
+
+import  React, { useEffect } from "react";
+
 import { StrapiImage } from "../blocks/StrapiImage";
 import type { HeroSectionProps } from "@/types";
-import "../../styles/button.css"; // Importing button styles
+import FadeInSection from "../FadeInSection";
+
 import TodaysMenu from "../TodaysMenu";
 
 const HeroSection = ({
-  theme,
   heading,
   cta,
   image,
   logo,
-  author,
-  publishedAt,
-  darken = false,
-  Menu,
+  menu = [],
   date,
   description,
+  price,
 }: Readonly<HeroSectionProps>) => {
 
+  console.log("menu", menu)
+
+  const transformedMenu = menu?.map((item) => ({
+    text: item.title,
+    description: item.note,
+  })) || [];
+
+  useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
 
   return (
-    <section className="w-[100vw] h-[100vh]">
-      <div className="relative flex w-full h-full justify-center items-center p-4">
-        <StrapiImage
+    <FadeInSection>
+    <section 
+      className="w-[100vw] h-[100vh] z-50 flex justify-center items-center relative top-0 bg-black"
+      id="reservar"
+    >
+      <StrapiImage
           src={image?.url}
           alt={image?.alternativeText || "Hero Image"}
           className="h-full min-w-full min-h-full object-cover block opacity-60"
@@ -30,28 +44,30 @@ const HeroSection = ({
           height={1080}
           priority
         />
-      </div>
-      <div className="text-xl absolute top-0 left-0 flex flex-col items-center justify-center text-white z-10">
-        <h1 className="text-7xl font-light mb-4 p-6 mt-40 text-left">
-          {heading}
-        </h1>
-      </div>
-      <button className="absolute bottom-40 left-1/2 -translate-x-1/2 bg-[#9e3333] text-sxl text-white hover:text-black py-4 px-8 rounded-lg hover:bg-red-100 transition-colors">
-        {cta?.text}
+      <div className="absolute top-0 flex w-full h-full justify-center items-center max-w-[1440px]">
+      <h1 className="absolute top-60 text-white z-20 text-6xl font-light mb-4 p-6 text-center lg:top-1/2 lg:-translate-y-1/2 lg:left-0">
+        {heading}
+      </h1>
+      <button className="absolute bottom-20 left-1/2 -translate-x-1/2 bg-[#842020] text-sxl text-white hover:text-black py-4 px-8 rounded-lg hover:bg-red-100 transition-colors">
+        <a href="tel:+351917464719">{cta?.text}</a>
       </button>
       <img
-        className="w-24 h-24 absolute left-1/2 -translate-x-1/2 top-12"
+        className="w-40 h-40 absolute left-1/2 -translate-x-1/2 top-12 lg:left-0 lg:translate-x-1/2 lg:w-25 lg:h-25"
         src={`http://localhost:1337${logo?.image.url}`}
         alt={logo?.alternativeText || "Logo"}
         width={100}
         height={100}
       />
+      {menu.length > 0 &&
       <TodaysMenu
-        menu={Menu || []}
-        date={date || ""}
-        description={description || ""}
-      />
+      menu={transformedMenu || []}
+      date={date || ""}
+      description={description || ""}
+      price={price || 10}
+      />}
+      </div>
     </section>
+    </FadeInSection>
   );
 };
 

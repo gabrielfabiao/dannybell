@@ -19,22 +19,41 @@ const homePageQuery = qs.stringify({
               },
             },
             cta: true,
-            Menu: true,
+            menu: true,
+          },
+        },
+        "blocks.header": {
+          populate: {
+            logo: {
+              populate: {
+                image: {
+                  fields: ["url", "alternativeText"],
+                }
+              },
+            },
+            navbarLink: true,
+          },
+        },
+        "blocks.about-us": {
+          populate: {
+            image: {
+              fields: ["url", "alternativeText"],
+            },
           },
         },
         "blocks.info-block": {
-            populate: {
-              image: {
-                fields: ["url", "alternativeText"],
-              },
-              cta: true,
+          populate: {
+            image: {
+              fields: ["url", "alternativeText"],
             },
+            cta: true,
           },
-        "blocks.book-now": true,
+        },
       },
     },
   },
 });
+
 
 console.log("Home page query:", homePageQuery);
 

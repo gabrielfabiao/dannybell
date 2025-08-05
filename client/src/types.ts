@@ -20,11 +20,17 @@ export interface LogoProps {
 }
 
 export interface menuItemProps {
-  title: string;
-  note: string;
+    title: string;
+    note: string;
 }
 
-type ComponentType = "block.hero-section" | "block.info-block" | "block.book-now"
+export interface navbarItemProps {
+    title: string;
+    href: string;
+    isExternal: boolean;
+}
+
+type ComponentType = "blocks.hero-section" | "blocks.header" | "blocks.about-us"
 
 interface Base<
     T extends ComponentType,
@@ -39,9 +45,9 @@ interface Base<
     data?: D;
 }
 
-export type Block = HeroSectionProps | InfoBlockProps | BookNowProps;
+export type Block = HeroSectionProps | HeaderProps | AboutUsProps;
 
-export interface HeroSectionProps extends Base<"block.hero-section"> {
+export interface HeroSectionProps extends Base<"blocks.hero-section"> {
     theme: "brick" | "white";
     heading: string;
     image: ImageProps;
@@ -49,21 +55,19 @@ export interface HeroSectionProps extends Base<"block.hero-section"> {
     logo?: LogoProps;
     author?: string;
     darken?: boolean;
-    Menu?: menuItemProps[];
+    menu?: menuItemProps[];
     date?: string;
     description?: string;
+    price: number;
 }
 
-export interface InfoBlockProps extends Base<"block.info-block"> {
-    theme: "brick" | "white";
-    reversed?: boolean;
-    heading: string;
-    content: string;
-    image: ImageProps;
-    cta?: LinkProps;
+export interface HeaderProps extends Base<"blocks.header"> {
+    logo: LogoProps;
+    navbarLink: navbarItemProps[];
 }
 
-export interface BookNowProps extends Base<"block.book-now"> {
+export interface AboutUsProps extends Base<"blocks.about-us"> {
     title: string;
     description: string;
+    image: ImageProps;
 }
