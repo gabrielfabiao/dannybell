@@ -11,6 +11,7 @@ export interface BlocksAboutUs extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+    subtitle: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }

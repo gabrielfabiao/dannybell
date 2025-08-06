@@ -20,6 +20,9 @@
     },
     "description": {
       "type": "text"
+    },
+    "subtitle": {
+      "type": "text"
     }
   },
   "config": {}
