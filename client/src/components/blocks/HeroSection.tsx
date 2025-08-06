@@ -19,8 +19,6 @@ const HeroSection = ({
   price,
 }: Readonly<HeroSectionProps>) => {
 
-  console.log("menu", menu)
-
   const transformedMenu = menu?.map((item) => ({
     text: item.title,
     description: item.note,
@@ -33,13 +31,13 @@ const HeroSection = ({
   return (
     <FadeInSection>
     <section 
-      className="w-[100vw] h-[100vh] z-50 flex justify-center items-center relative top-0 bg-black"
+      className="max-w-[100vw] h-[100vh] z-50 flex justify-center items-center relative top-0 bg-black"
       id="reservar"
     >
       <StrapiImage
           src={image?.url}
           alt={image?.alternativeText || "Hero Image"}
-          className="h-full min-w-full min-h-full object-cover block opacity-60"
+          className="w-full h-full max-w-[100vw] max-h-[full] object-cover block opacity-60"
           width={1920}
           height={1080}
           priority

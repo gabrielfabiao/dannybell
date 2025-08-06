@@ -37,7 +37,9 @@ const homePageQuery = qs.stringify({
         "blocks.about-us": {
           populate: {
             image: {
-              fields: ["url", "alternativeText"],
+              populate: {
+                fields: ["url", "alternativeText"]
+              },
             },
           },
         },
@@ -54,9 +56,6 @@ const homePageQuery = qs.stringify({
   },
 });
 
-
-console.log("Home page query:", homePageQuery);
-
 export async function getHomePage() {
   const path = "/api/home-page";
   const BASE_URL = getStrapiURL();
@@ -64,8 +63,6 @@ export async function getHomePage() {
   const url = new URL(path, BASE_URL);
 
   url.search = homePageQuery;
-
-  console.log("Fetching home page data from:", url);
 
   return await fetchAPI(url.href, { method: "GET" });
 }

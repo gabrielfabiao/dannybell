@@ -30,6 +30,10 @@ export interface navbarItemProps {
     isExternal: boolean;
 }
 
+export interface carouselProps {
+    images: ImageProps[]
+}
+
 type ComponentType = "blocks.hero-section" | "blocks.header" | "blocks.about-us"
 
 interface Base<
@@ -69,5 +73,6 @@ export interface HeaderProps extends Base<"blocks.header"> {
 export interface AboutUsProps extends Base<"blocks.about-us"> {
     title: string;
     description: string;
-    image: ImageProps;
+    image: ImageProps[];
+    subtitle: string;
 }

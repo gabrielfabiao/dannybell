@@ -8,6 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import Stack from '@mui/material/Stack';
 import MenuIcon from '../assets/menu_icon.png'
+import useScrollDirection from '@/utils/scroll-tracker';
 
 type MenuListComposition = {
   navbar: Array<{ title: string; href: string; isExternal: boolean }>,
@@ -17,9 +18,9 @@ export default function MenuListComposition({
     navbar
 }: MenuListComposition) {
 
-    console.log("the navbar:", navbar)
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLButtonElement>(null);
+  const isScrollingDown = useScrollDirection()
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -52,15 +53,14 @@ export default function MenuListComposition({
     prevOpen.current = open;
   }, [open]);
 
-  console.log("HamburguerMenu Navbar:", navbar)
-
   return (
     <Stack direction="row" spacing={2} className='!font-Montserrat'>
       <Paper
         sx={{
           display: { xs: 'none', md: 'flex' },
           flexDirection: 'row',
-          height: '60px'
+          height: '60px',
+          background: 'transparent'
         }}
         elevation={0}
       >
@@ -68,7 +68,7 @@ export default function MenuListComposition({
           sx={{ display: 'flex', flexDirection: 'row', p: 0 }}
         >
         {navbar.map((option, index) => (
-          <MenuItem key={index} className="group relative !bg-[#4d1313] !text-white !font-extralight !list-none !shadow-none flex transition-all duration-500 ease-in-out hover:!bg-white hover:!text-[#4d1313]">
+          <MenuItem key={index} className={`group relative ${isScrollingDown ? '!bg-[#842020]' : '!bg-transparent'} !text-white !font-extralight !list-none !shadow-none flex transition-all duration-500 ease-in-out hover:!bg-white hover:!text-[#4d1313]`}>
             <a href={option?.href}><span className='mx-auto w-fit !font-[Montserrat] font-normal'>{option.title}</span></a>
           </MenuItem>
         ))}
@@ -103,17 +103,22 @@ export default function MenuListComposition({
                   placement === 'bottom-start' ? 'left top' : 'left bottom',
               }}
             >
-              <Paper>
+              <Paper
+                sx={{
+                background: 'transparent'
+                }}
+                elevation={0}
+              >
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList
                     autoFocusItem={open}
                     id="composition-menu"
                     aria-labelledby="composition-button"
                     onKeyDown={handleListKeyDown}
-                    className='!bg-transparent !gap-200 !p-0 !m-0'
+                    className='!bg-transparent !p-0 !m-0'
                   >
                     {navbar.map((option, index) => (
-                      <MenuItem key={index} className="group relative !bg-[#4d1313] !text-white !font-extralight !list-none !shadow-none flex transition-all duration-500 ease-in-out hover:!bg-white hover:!text-[#4d1313]">
+                      <MenuItem key={index} className="group relative !bg-[#4d1313] !text-white !font-extralight !list-none !shadow-none flex transition-all duration-500 ease-in-out hover:!bg-white hover:!text-[#4d1313] !rounded-md !mb-2">
                         <a href={option?.href}>
                           <span className='mx-auto w-fit !font-[Montserrat] font-normal'>{option.title}</span>
                         </a>

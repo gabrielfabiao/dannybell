@@ -8,7 +8,6 @@ import { notFound } from "next/navigation";
 async function loader() {
   const data = await getHomePage();
   if (!data) notFound();
-  console.log("Home page data:", data);
 
   return { ...data.data }
 }
@@ -16,7 +15,6 @@ async function loader() {
 export default async function HomeRoute() {
   const data = await loader()
   const blocks = data.blocks || [];
-  console.log(data)
 
   return (
     <div className="relative">
