@@ -56,6 +56,9 @@ const homePageQuery = qs.stringify({
   },
 });
 
+export const weeklyMenuQuery = "";
+
+
 export async function getHomePage() {
   const path = "/api/home-page";
   const BASE_URL = getStrapiURL();
@@ -63,6 +66,17 @@ export async function getHomePage() {
   const url = new URL(path, BASE_URL);
 
   url.search = homePageQuery;
+
+  return await fetchAPI(url.href, { method: "GET" });
+}
+
+export async function getWeeklyMenu() {
+  const path = "/api/weekly-menus";
+  const BASE_URL = getStrapiURL();
+
+  const url = new URL(path, BASE_URL);
+
+  url.search = weeklyMenuQuery;
 
   return await fetchAPI(url.href, { method: "GET" });
 }

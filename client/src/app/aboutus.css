@@ -1,0 +1,13 @@
+.grainy-bg {
+  background-image: url('../../public/grainy-bg.jpg');
+  background-size: 20%;
+  background-blend-mode: overlay;
+  background-color: #4d1313;
+}
+
+.grainy-bg-grey {
+  background-image: url('../../public/grainy-bg.jpg');
+  background-size: 20%;
+  background-blend-mode: overlay;
+  background-color: #707070;
+}

@@ -5,6 +5,7 @@ import { HeaderProps } from "@/types";
 import HamburguerMenu from "../components/HamburguerMenu";
 import LogoBlack from "../assets/dannybell-logo.png";
 import useScrollDirection from '@/utils/scroll-tracker';
+import "../app/aboutus.css"
 
 const StickyHeader = ({
   logo,
@@ -40,7 +41,7 @@ const StickyHeader = ({
 
       inactivityTimeout.current = setTimeout(() => {
         setIsUserActive(false);
-      }, 1000);
+      }, 5000);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -60,7 +61,7 @@ const StickyHeader = ({
       animate={shouldShowHeader ? { y: 0, opacity: 1 } : { y: -80, opacity: 0 }}
       transition={{ duration: 0.3 }}
       className={`fixed top-0 left-0 w-full z-50 ${
-        isScrollingDown ? 'bg-[#842020]' : 'bg-transparent'
+        isScrollingDown ? 'grainy-bg' : 'bg-transparent'
       } transition-all duration-500 ease-in-out`}
     >
       <div className="max-w-6xl mx-auto px-4 flex h-fit justify-between items-center py-2 lg:py-0">

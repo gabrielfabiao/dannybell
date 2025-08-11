@@ -3,13 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-body {
-  background-color: rgb(23, 0, 0);
-  font-family: "Montserrat";
-  background-color: black !important;
-}
-
 html {
   scroll-behavior: smooth;
 }

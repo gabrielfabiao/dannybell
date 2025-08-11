@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "weekly_menus",
+  "info": {
+    "singularName": "weekly-menu",
+    "pluralName": "weekly-menus",
+    "displayName": "weekly-menu"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "segunda": {
+      "type": "blocks"
+    },
+    "terca": {
+      "type": "blocks"
+    },
+    "quarta": {
+      "type": "blocks"
+    },
+    "quinta": {
+      "type": "blocks"
+    },
+    "sexta": {
+      "type": "blocks"
+    },
+    "sabado": {
+      "type": "blocks"
+    }
+  }
+}

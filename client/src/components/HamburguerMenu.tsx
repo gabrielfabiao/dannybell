@@ -9,6 +9,8 @@ import MenuList from '@mui/material/MenuList';
 import Stack from '@mui/material/Stack';
 import MenuIcon from '../assets/menu_icon.png'
 import useScrollDirection from '@/utils/scroll-tracker';
+import "../app/aboutus.css"
+
 
 type MenuListComposition = {
   navbar: Array<{ title: string; href: string; isExternal: boolean }>,
@@ -68,7 +70,7 @@ export default function MenuListComposition({
           sx={{ display: 'flex', flexDirection: 'row', p: 0 }}
         >
         {navbar.map((option, index) => (
-          <MenuItem key={index} className={`group relative ${isScrollingDown ? '!bg-[#842020]' : '!bg-transparent'} !text-white !font-extralight !list-none !shadow-none flex transition-all duration-500 ease-in-out hover:!bg-white hover:!text-[#4d1313]`}>
+          <MenuItem key={index} className={`group relative ${isScrollingDown ? '!grainy-bg' : '!bg-transparent'} !text-white !font-extralight !list-none !shadow-none flex transition-all duration-500 ease-in-out hover:!bg-white hover:!text-[#4d1313]`}>
             <a href={option?.href}><span className='mx-auto w-fit !font-[Montserrat] font-normal'>{option.title}</span></a>
           </MenuItem>
         ))}
