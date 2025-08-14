@@ -390,6 +390,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         'blocks.hero-section',
         'blocks.about-us',
         'blocks.header',
+        'blocks.events-section',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

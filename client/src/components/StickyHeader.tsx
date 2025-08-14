@@ -2,6 +2,7 @@
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { HeaderProps } from "@/types";
+import { getStrapiURL } from "@/utils/get-strapi-url";
 import HamburguerMenu from "../components/HamburguerMenu";
 import LogoBlack from "../assets/dannybell-logo.png";
 import useScrollDirection from '@/utils/scroll-tracker';
@@ -12,7 +13,7 @@ const StickyHeader = ({
   navbarLink = [],
 }: Readonly<HeaderProps>) => {
   const [isSticky, setIsSticky] = useState(false);
-  const [isUserActive, setIsUserActive] = useState(true); // New state for activity
+  const [isUserActive, setIsUserActive] = useState(true);
   const inactivityTimeout = useRef<NodeJS.Timeout | null>(null);
 
   const isScrollingDown = useScrollDirection();
@@ -67,7 +68,7 @@ const StickyHeader = ({
       <div className="max-w-6xl mx-auto px-4 flex h-fit justify-between items-center py-2 lg:py-0">
         <img
           className="w-30 h-auto lg:w-25 hidden lg:block"
-          src={`http://localhost:1337${logo?.image?.url}`}
+          src={`${getStrapiURL()}${logo?.image?.url}`}
           alt={logo?.alternativeText || "Logo"}
           width={100}
           height={100}

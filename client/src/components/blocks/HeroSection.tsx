@@ -3,6 +3,7 @@
 import  React, { useEffect } from "react";
 
 import { StrapiImage } from "../blocks/StrapiImage";
+import { getStrapiURL } from "@/utils/get-strapi-url";
 import type { HeroSectionProps } from "@/types";
 import FadeInSection from "../FadeInSection";
 import WeeklyMenu from "../WeeklyMenu";
@@ -54,15 +55,15 @@ const HeroSection = ({
         priority
       />
       <div className="absolute top-0 flex w-full h-full justify-center items-center max-w-[1440px]">
-      <h1 className="absolute top-60 text-white z-20 text-6xl font-light mb-4 p-6 text-center lg:top-1/2 lg:-translate-y-1/2 lg:left-0">
+      <h1 className="absolute top-45 text-white z-20 text-6xl italic font-light mb-4 p-6 text-center lg:top-1/2 lg:-translate-y-1/2 lg:left-40 font-[garamond]">
         {heading}
       </h1>
-      <button className="absolute bottom-20 left-1/2 -translate-x-1/2 bg-[#842020] text-sxl text-white hover:text-black py-4 px-8 rounded-lg hover:!bg-red-100 transition-colors grainy-bg">
+      <button className="absolute bottom-15 left-1/2 -translate-x-1/2 bg-[#842020] text-sxl text-white hover:text-black py-4 px-8 rounded-lg hover:!bg-red-100 transition-colors grainy-bg">
         <a href="tel:+351917464719">{cta?.text}</a>
       </button>
       <img
-        className="w-40 h-40 absolute left-1/2 -translate-x-1/2 top-12 lg:left-0 lg:translate-x-1/2 lg:w-25 lg:h-25"
-        src={`http://localhost:1337${logo?.image.url}`}
+        className="w-30 h-30 absolute left-1/2 -translate-x-1/2 top-12 lg:left-0 lg:translate-x-1/2 lg:w-25 lg:h-25"
+        src={`${getStrapiURL()}${logo?.image.url}`}
         alt={logo?.alternativeText || "Logo"}
         width={100}
         height={100}

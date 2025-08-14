@@ -34,7 +34,24 @@ export interface carouselProps {
     images: ImageProps[]
 }
 
-type ComponentType = "blocks.hero-section" | "blocks.header" | "blocks.about-us"
+export interface pastEventsProps {
+    id: number;
+    title: string;
+    images: ImageProps[];
+    info: string;
+    description: string;
+    date: string
+}
+
+export interface futureEventsProps {
+  id: number;
+  title: string;
+  description: string;
+  date: string;
+}
+
+
+type ComponentType = "blocks.hero-section" | "blocks.header" | "blocks.about-us" | "blocks.info-block" | "blocks.events-section"
 
 interface Base<
     T extends ComponentType,
@@ -49,7 +66,7 @@ interface Base<
     data?: D;
 }
 
-export type Block = HeroSectionProps | HeaderProps | AboutUsProps;
+export type Block = HeroSectionProps | HeaderProps | AboutUsProps | InfoBlockProps | EventsSectionProps;
 
 export interface HeroSectionProps extends Base<"blocks.hero-section"> {
     theme: "brick" | "white";
@@ -75,4 +92,20 @@ export interface AboutUsProps extends Base<"blocks.about-us"> {
     description: string;
     image: ImageProps[];
     subtitle: string;
+}
+
+export interface InfoBlockProps extends Base<"blocks.info-block"> {
+    reversed: boolean;
+    image: ImageProps;
+    content: string;
+    cta: LinkProps;
+    theme: "brick" | "white";
+    heading: string;
+}
+
+export interface EventsSectionProps extends Base<"blocks.events-section"> {
+    pastEvents: pastEventsProps[];
+    futureEvent: futureEventsProps[];
+    titlePast: string;
+    titleFuture: string;
 }

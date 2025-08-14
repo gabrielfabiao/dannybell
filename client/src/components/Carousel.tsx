@@ -21,7 +21,7 @@ export default function Carousel({ images }: Readonly<carouselProps>) {
       }}
       autoplay={{ delay: 5000, disableOnInteraction: false }}
       modules={[Navigation, Autoplay]}
-      className="relative w-auto h-fit lg:w-[450px] lg:!m-0 overflow-hidden max-w-[100%]"
+      className="relative w-auto h-fit lg:w-[500px] lg:!m-0 overflow-hidden max-w-[100%]"
     >
       {images.map((image, index) => (
         <SwiperSlide key={index}>

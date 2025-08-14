@@ -71,7 +71,7 @@ export default function MenuListComposition({
         >
         {navbar.map((option, index) => (
           <MenuItem key={index} className={`group relative ${isScrollingDown ? '!grainy-bg' : '!bg-transparent'} !text-white !font-extralight !list-none !shadow-none flex transition-all duration-500 ease-in-out hover:!bg-white hover:!text-[#4d1313]`}>
-            <a href={option?.href}><span className='mx-auto w-fit !font-[Montserrat] font-normal'>{option.title}</span></a>
+            <a href={option?.href}><span className='mx-auto w-fit font-[lato] font-normal'>{option.title}</span></a>
           </MenuItem>
         ))}
         </MenuList>
@@ -122,7 +122,7 @@ export default function MenuListComposition({
                     {navbar.map((option, index) => (
                       <MenuItem key={index} className="group relative !bg-[#4d1313] !text-white !font-extralight !list-none !shadow-none flex transition-all duration-500 ease-in-out hover:!bg-white hover:!text-[#4d1313] !rounded-md !mb-2">
                         <a href={option?.href}>
-                          <span className='mx-auto w-fit !font-[Montserrat] font-normal'>{option.title}</span>
+                          <span className='mx-auto w-fit !font-[Lato] font-normal'>{option.title}</span>
                         </a>
                       </MenuItem>
                     ))}

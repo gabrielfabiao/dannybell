@@ -23,7 +23,8 @@
         "blocks.info-block",
         "blocks.hero-section",
         "blocks.about-us",
-        "blocks.header"
+        "blocks.header",
+        "blocks.events-section"
       ]
     }
   }

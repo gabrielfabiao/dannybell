@@ -1,7 +1,7 @@
 
 import type { Metadata } from 'next'
 import './globals.css'
-import { montserrat } from './fonts'
+import { lato } from './fonts'
 
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={montserrat.className}>
+    <html lang="en" className={lato.className}>
       <body>{children}</body>
     </html>
   )

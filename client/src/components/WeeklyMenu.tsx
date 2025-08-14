@@ -50,19 +50,19 @@ const WeeklyMenu = ({ description, price }: WeeklyMenuProps) => {
   }, []);
 
   return (
-    <div className="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 bg-[rgba(132,32,32,0.7)] rounded-xl p-4 shadow-lg max-w-lg w-80 text-left justify-center lg:right-0 lg:translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2 whitespace-pre-wrap">
-      <h2 className="text-xl text-white">
+    <div className="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/8 bg-[rgba(132,32,32,0.7)] rounded-xl p-4 shadow-2xl max-w-lg w-90 text-left justify-center lg:right-0 lg:translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2 whitespace-pre-wrap">
+      <h2 className="text-2xl text-white">
         Menu do Dia
       </h2>
-      <p className="mb-4 text-[#ffcfcfff] text-xs font-normal">
+      <p className="mb-4 text-[#ffcfcfff] text-sm font-normal">
         {formattedDate}
       </p>
-      <p className="list-none leading-tight text-white font-extralight">
+      <p className="list-none leading-tight text-white font-light text-lg">
         {menuText || "Nenhum menu disponível."}
       </p>
       <p className="mt-4 text-xs text-black font-normal">{description}</p>
-      <div className="w-20 h-20 rounded-full absolute bg-[rgba(132,32,32,1)] flex items-center justify-center top-0 -translate-y-1/4 right-0 translate-x-1/4">
-        <p className="text-3xl text-white tracking-wider">{price}€</p>
+      <div className="w-20 h-20 rounded-xl absolute bg-[rgba(132,32,32,1)] flex items-center justify-center top-0 right-0 shadow-2xl grainy-bg">
+        <p className="text-3xl text-white tracking-wider font-[garamond]">{price}€</p>
       </div>
     </div>
   );

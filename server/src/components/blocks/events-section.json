@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_blocks_events_sections",
+  "info": {
+    "displayName": "Events Section"
+  },
+  "options": {},
+  "attributes": {
+    "pastEvents": {
+      "type": "component",
+      "component": "elements.past-event",
+      "repeatable": true
+    },
+    "futureEvent": {
+      "type": "component",
+      "component": "elements.future-events",
+      "repeatable": true
+    },
+    "titlePast": {
+      "type": "string"
+    },
+    "titleFuture": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

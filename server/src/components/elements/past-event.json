@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_elements_past_events",
+  "info": {
+    "displayName": "Past Event"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "info": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    }
+  },
+  "config": {}
+}

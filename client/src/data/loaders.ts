@@ -28,7 +28,7 @@ const homePageQuery = qs.stringify({
               populate: {
                 image: {
                   fields: ["url", "alternativeText"],
-                }
+                },
               },
             },
             navbarLink: true,
@@ -38,7 +38,7 @@ const homePageQuery = qs.stringify({
           populate: {
             image: {
               populate: {
-                fields: ["url", "alternativeText"]
+                fields: ["url", "alternativeText"],
               },
             },
           },
@@ -51,13 +51,26 @@ const homePageQuery = qs.stringify({
             cta: true,
           },
         },
+        "blocks.events-section": {
+          populate: {
+            pastEvents: {
+              populate: {
+                images: {
+                  fields: ["url", "alternativeText"],
+                },
+              },
+              fields: ["title", "date"],
+            },
+            futureEvent: true,
+          },
+        },
       },
     },
   },
 });
 
-export const weeklyMenuQuery = "";
 
+export const weeklyMenuQuery = "";
 
 export async function getHomePage() {
   const path = "/api/home-page";
