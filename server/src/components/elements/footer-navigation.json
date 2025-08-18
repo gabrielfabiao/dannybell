@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_elements_footer_navigations",
+  "info": {
+    "displayName": "footerNavigation"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "footerLink": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

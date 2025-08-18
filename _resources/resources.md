@@ -39,7 +39,7 @@ LHS query syntax:
 
 
 colors:
-
+#ebddd3
 #ffcfcfff
 #dd7d7d	(221,125,125)
 #cb6b6b	(203,107,107)

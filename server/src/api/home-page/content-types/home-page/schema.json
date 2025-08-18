@@ -24,7 +24,9 @@
         "blocks.hero-section",
         "blocks.about-us",
         "blocks.header",
-        "blocks.events-section"
+        "blocks.events-section",
+        "blocks.menu-info-section",
+        "blocks.footer"
       ]
     }
   }

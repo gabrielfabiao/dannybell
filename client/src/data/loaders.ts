@@ -59,9 +59,47 @@ const homePageQuery = qs.stringify({
                   fields: ["url", "alternativeText"],
                 },
               },
-              fields: ["title", "date"],
+              fields: ["title", "date", "description", "info"],
             },
             futureEvent: true,
+          },
+        },
+        "blocks.menu-info-section": {
+          populate: {
+            MenuInfo: {
+              populate: {
+                icon: {
+                  fields: ["url", "alternativeText"],
+                },
+              },
+            },
+          },
+        },
+        "blocks.footer": {
+          populate: {
+            footerNavigation: {
+              populate: {
+                footerLink: true,
+              },
+            },
+            footerInfo: {
+              populate: {
+                logo: {
+                  populate: {
+                    image: {
+                      fields: ["url", "alternativeText"]
+                    },
+                  },
+                },
+              }
+            },
+            socials: {
+              populate: {
+                logo: {
+                  fields: ["url", "alternativeText"],
+                },
+              },
+            },
           },
         },
       },

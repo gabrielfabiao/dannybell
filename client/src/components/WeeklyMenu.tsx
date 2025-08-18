@@ -54,7 +54,7 @@ const WeeklyMenu = ({ description, price }: WeeklyMenuProps) => {
       <h2 className="text-2xl text-white">
         Menu do Dia
       </h2>
-      <p className="mb-4 text-[#ffcfcfff] text-sm font-normal">
+      <p className="mb-4 text-[#ebddd3] text-sm font-normal">
         {formattedDate}
       </p>
       <p className="list-none leading-tight text-white font-light text-lg">

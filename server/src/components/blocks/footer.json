@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_blocks_footers",
+  "info": {
+    "displayName": "Footer"
+  },
+  "options": {},
+  "attributes": {
+    "footerNavigation": {
+      "type": "component",
+      "component": "elements.footer-navigation",
+      "repeatable": false
+    },
+    "footerInfo": {
+      "type": "component",
+      "component": "elements.footer-info",
+      "repeatable": false
+    },
+    "frase": {
+      "type": "text"
+    },
+    "follow": {
+      "type": "string"
+    },
+    "socials": {
+      "type": "component",
+      "component": "elements.socials",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

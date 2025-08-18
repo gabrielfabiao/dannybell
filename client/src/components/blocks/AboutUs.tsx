@@ -11,10 +11,11 @@ const AboutUs = ({
   image,
   subtitle,
 }: Readonly<AboutUsProps>) => {
+
   const transformedImages: ImageProps[] =
     image?.map((item) => ({
       id: item.id,
-      url: `${getStrapiURL()}${item.url}`,
+      url: `${item.url}`,
       alternativeText: item.alternativeText || "",
       documentId: item.documentId || "",
     })) || [];
@@ -34,9 +35,9 @@ const AboutUs = ({
           {subtitle}
         </h2>
         <div className="bg-[rgba(77,19,19,0.2)] items-center flex w-full py-4">
-          <div className="lg:justify-around mx:auto max-w-[100%] lg:max-w-[70%] lg:flex-row lg:flex mx-auto items-center py-4">
-            <Carousel images={transformedImages} />
-            <p className="px-4 mt-4 w-full lg:mt-0 max-w-[100vw] lg:!max-w-[500px] text-md text-center lg:text-left mx-auto">
+          <div className="lg:justify-around mx:auto max-w-[100%] lg:max-w-[70%] lg:flex-row lg:flex mx-auto items-center py-4 lg:grid grid-cols-2">
+            <Carousel images={transformedImages} width="100%" height="auto" />
+            <p className="px-4 mt-4 w-full lg:w-FULL lg:mt-0 max-w-[100vw] lg:!max-w-[500px] text-md text-center lg:text-left mx-auto">
               {description}
             </p>
           </div>

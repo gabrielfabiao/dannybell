@@ -1,24 +1,29 @@
-import React from 'react'
-import { futureEventsProps } from '@/types';
+import React from "react";
+import { futureEventsProps } from "@/types";
 
 interface FutureEventsProps {
   block: futureEventsProps;
 }
 
-const FutureEvents = ({
-    block
-}: FutureEventsProps) => {
+const FutureEvents = ({ block }: FutureEventsProps) => {
+  const today = new Date();
+  const eventDate = new Date(block.date!);
 
-    const date = block.date
-    const formattedPropDate = new Date(date!).toLocaleDateString('en-GB').slice(0, 10);
+  if (eventDate <= today) {
+    return null;
+  }
 
-    return (
-    <li className='grid lg:grid-cols-3 w-full h-fit border rounded-lg mb-4 items-center px-4 py-2'>
-        <p className='font-bold'>{block.title}</p>
-        <p>{block.description}</p>
-        <p className='text-right'>{formattedPropDate}</p>
+  const formattedDate = eventDate.toLocaleDateString("en-GB");
+
+  return (
+    <li className="grid lg:grid-cols-3 gap-4 w-full rounded-xl mb-4 p-4 bg-[rgba(77,19,19,0.2)] shadow-md hover:shadow-lg transition-shadow duration-300">
+      <p className="font-semibold text-lg text-[#4d1313] text-center">
+        {block.title}
+      </p>
+      <p className="text-gray-700">{block.description}</p>
+      <p className="text-gray-600 lg:text-right">{formattedDate}</p>
     </li>
-  )
-}
+  );
+};
 
-export default FutureEvents
+export default FutureEvents;

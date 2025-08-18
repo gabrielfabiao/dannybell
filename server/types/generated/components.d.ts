@@ -29,6 +29,23 @@ export interface BlocksEventsSection extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksFooter extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_footers';
+  info: {
+    displayName: 'Footer';
+  };
+  attributes: {
+    follow: Schema.Attribute.String;
+    footerInfo: Schema.Attribute.Component<'elements.footer-info', false>;
+    footerNavigation: Schema.Attribute.Component<
+      'elements.footer-navigation',
+      false
+    >;
+    frase: Schema.Attribute.Text;
+    socials: Schema.Attribute.Component<'elements.socials', true>;
+  };
+}
+
 export interface BlocksHeader extends Struct.ComponentSchema {
   collectionName: 'components_blocks_headers';
   info: {
@@ -73,6 +90,42 @@ export interface BlocksInfoBlock extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksMenuInfoSection extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_menu_info_sections';
+  info: {
+    displayName: 'Menu Info Section';
+  };
+  attributes: {
+    MenuInfo: Schema.Attribute.Component<'elements.menu-info', true>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsFooterInfo extends Struct.ComponentSchema {
+  collectionName: 'components_elements_footer_infos';
+  info: {
+    displayName: 'footerInfo';
+  };
+  attributes: {
+    address: Schema.Attribute.Text;
+    contact: Schema.Attribute.String;
+    email: Schema.Attribute.String;
+    logo: Schema.Attribute.Component<'elements.logo', false>;
+  };
+}
+
+export interface ElementsFooterNavigation extends Struct.ComponentSchema {
+  collectionName: 'components_elements_footer_navigations';
+  info: {
+    displayName: 'footerNavigation';
+  };
+  attributes: {
+    footerLink: Schema.Attribute.Component<'elements.link', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsFutureEvents extends Struct.ComponentSchema {
   collectionName: 'components_elements_future_events';
   info: {
@@ -105,6 +158,17 @@ export interface ElementsLogo extends Struct.ComponentSchema {
   attributes: {
     image: Schema.Attribute.Media<'images'>;
     logo: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsMenuInfo extends Struct.ComponentSchema {
+  collectionName: 'components_elements_menu_infos';
+  info: {
+    displayName: 'MenuInfo';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    info: Schema.Attribute.Text;
   };
 }
 
@@ -148,20 +212,37 @@ export interface ElementsPastEvent extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsSocials extends Struct.ComponentSchema {
+  collectionName: 'components_elements_socials';
+  info: {
+    displayName: 'socials';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'blocks.about-us': BlocksAboutUs;
       'blocks.events-section': BlocksEventsSection;
+      'blocks.footer': BlocksFooter;
       'blocks.header': BlocksHeader;
       'blocks.hero-section': BlocksHeroSection;
       'blocks.info-block': BlocksInfoBlock;
+      'blocks.menu-info-section': BlocksMenuInfoSection;
+      'elements.footer-info': ElementsFooterInfo;
+      'elements.footer-navigation': ElementsFooterNavigation;
       'elements.future-events': ElementsFutureEvents;
       'elements.link': ElementsLink;
       'elements.logo': ElementsLogo;
+      'elements.menu-info': ElementsMenuInfo;
       'elements.menu-item': ElementsMenuItem;
       'elements.navbar-item': ElementsNavbarItem;
       'elements.past-event': ElementsPastEvent;
+      'elements.socials': ElementsSocials;
     }
   }
 }

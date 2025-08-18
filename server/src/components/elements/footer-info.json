@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_elements_footer_infos",
+  "info": {
+    "displayName": "footerInfo"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "component",
+      "component": "elements.logo",
+      "repeatable": false
+    },
+    "address": {
+      "type": "text"
+    },
+    "contact": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

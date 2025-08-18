@@ -3,12 +3,17 @@ import HeroSection from "@/components/blocks/HeroSection";
 import MenuSectionWrapper from "@/components/MenuSectionWrapper";
 import StickyHeader from "@/components/StickyHeader";
 import EventsSection from "@/components/blocks/EventsSection";
+import MenuInfoSection from "@/components/blocks/MenuInfoSection";
+import Footer from "@/components/blocks/Footer";
 import { getHomePage } from "@/data/loaders";
 import { notFound } from "next/navigation";
 import { HeaderProps } from "@/types";
 import { HeroSectionProps } from "@/types";
 import { AboutUsProps } from "@/types";
 import { EventsSectionProps } from "@/types"
+import { MenuInfoSectionProps } from "@/types"
+import { FooterProps } from "@/types";
+import type { Block } from "@/types";
 
 
 async function loader() {
@@ -18,7 +23,6 @@ async function loader() {
   return { ...data.data }
 }
 
-import type { Block } from "@/types";
 
 function isHeaderBlock(block: Block): block is HeaderProps {
   return block.__component === "blocks.header";
@@ -36,6 +40,13 @@ function isEventsSectionBlock(block: Block): block is EventsSectionProps {
   return block.__component === "blocks.events-section"
 }
 
+function isMenuInfoSection(block: Block): block is MenuInfoSectionProps {
+  return block.__component === "blocks.menu-info-section"
+}
+
+function isFooterSection(block: Block): block is FooterProps {
+  return block.__component === "blocks.footer"
+}
 
 export default async function HomeRoute() {
   const data = await loader();
@@ -45,14 +56,18 @@ export default async function HomeRoute() {
   const heroBlock = blocks.find(isHeroBlock);
   const aboutUsBlock = blocks.find(isAboutUsBlock);
   const eventsSectionBlock = blocks.find(isEventsSectionBlock)
+  const menuInfoSectionBlock = blocks.find(isMenuInfoSection)
+  const footerBlock = blocks.find(isFooterSection)
 
   return (
     <div className="relative">
       {headerBlock && <StickyHeader {...headerBlock} />}
       {heroBlock && <HeroSection {...heroBlock} />}
       <MenuSectionWrapper blocks={blocks} />
+      {menuInfoSectionBlock && <MenuInfoSection {...menuInfoSectionBlock} />}
       {aboutUsBlock && <AboutUs {...aboutUsBlock} />}
       {eventsSectionBlock && <EventsSection {...eventsSectionBlock} />}
+      {footerBlock && <Footer {...footerBlock} />}
     </div>
   );
 }

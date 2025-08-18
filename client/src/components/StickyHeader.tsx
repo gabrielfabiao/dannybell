@@ -57,14 +57,14 @@ const StickyHeader = ({
   const shouldShowHeader = isSticky && isUserActive;
 
   return (
-    <motion.header
-      initial={{ y: -80, opacity: 0 }}
-      animate={shouldShowHeader ? { y: 0, opacity: 1 } : { y: -80, opacity: 0 }}
-      transition={{ duration: 0.3 }}
-      className={`fixed top-0 left-0 w-full z-50 ${
-        isScrollingDown ? 'grainy-bg' : 'bg-transparent'
-      } transition-all duration-500 ease-in-out`}
-    >
+<motion.header
+  initial={{ y: "-100%", opacity: 0 }}
+  animate={shouldShowHeader ? { y: "0%", opacity: 1 } : { y: "-100%", opacity: 0 }}
+  transition={{ duration: 0.3 }}
+  className={`fixed top-0 left-0 w-full z-50 ${
+    isScrollingDown ? 'grainy-bg' : 'bg-transparent'
+  } transition-all duration-500 ease-in-out`}
+>
       <div className="max-w-6xl mx-auto px-4 flex h-fit justify-between items-center py-2 lg:py-0">
         <img
           className="w-30 h-auto lg:w-25 hidden lg:block"

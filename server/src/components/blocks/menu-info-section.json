@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_menu_info_sections",
+  "info": {
+    "displayName": "Menu Info Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "MenuInfo": {
+      "type": "component",
+      "component": "elements.menu-info",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

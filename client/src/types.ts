@@ -31,7 +31,9 @@ export interface navbarItemProps {
 }
 
 export interface carouselProps {
-    images: ImageProps[]
+    images: ImageProps[],
+    width: string,
+    height: string,
 }
 
 export interface pastEventsProps {
@@ -50,23 +52,56 @@ export interface futureEventsProps {
   date: string;
 }
 
-
-type ComponentType = "blocks.hero-section" | "blocks.header" | "blocks.about-us" | "blocks.info-block" | "blocks.events-section"
-
-interface Base<
-    T extends ComponentType,
-    D extends object  = Record<string, unknown>
-> {
+export interface menuInfoProps {
     id: number;
-    __component?: T;
-    documentId?: string;
-    createdAt?: string;
-    updatedAt?: string;
-    publishedAt?: string;
-    data?: D;
+    info: string;
+    icon: ImageProps;
 }
 
-export type Block = HeroSectionProps | HeaderProps | AboutUsProps | InfoBlockProps | EventsSectionProps;
+export interface FooterNavigationProps {
+  id: number;
+  title: string;
+  footerLink: LinkProps[];
+}
+
+export interface FooterInfoProps {
+  id: number;
+  address?: string;
+  contact?: string;
+  email?: string;
+  logo: LogoProps;
+}
+
+export interface LogoProps {
+  id: number;
+  image: ImageProps;
+}
+
+export interface SocialLinkProps {
+  id: number;
+  platform?: string;
+  url: string;
+  logo: ImageProps;
+}
+
+
+type ComponentType = "blocks.hero-section" | "blocks.header" | "blocks.about-us" | "blocks.info-block" | "blocks.events-section" | "blocks.menu-info-section" | "blocks.footer"
+
+interface Base<
+  T extends ComponentType,
+  D extends object = Record<string, unknown>
+> {
+  id: number;
+  __component: T;
+  documentId?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  publishedAt?: string;
+  data?: D;
+}
+
+
+export type Block = HeroSectionProps | HeaderProps | AboutUsProps | InfoBlockProps | EventsSectionProps | MenuInfoSectionProps | FooterProps;
 
 export interface HeroSectionProps extends Base<"blocks.hero-section"> {
     theme: "brick" | "white";
@@ -95,12 +130,11 @@ export interface AboutUsProps extends Base<"blocks.about-us"> {
 }
 
 export interface InfoBlockProps extends Base<"blocks.info-block"> {
-    reversed: boolean;
-    image: ImageProps;
-    content: string;
-    cta: LinkProps;
-    theme: "brick" | "white";
-    heading: string;
+    reversed?: boolean;
+    image?: ImageProps;
+    content?: string;
+    cta?: LinkProps;
+    heading?: string;
 }
 
 export interface EventsSectionProps extends Base<"blocks.events-section"> {
@@ -108,4 +142,18 @@ export interface EventsSectionProps extends Base<"blocks.events-section"> {
     futureEvent: futureEventsProps[];
     titlePast: string;
     titleFuture: string;
+}
+
+export interface MenuInfoSectionProps extends Base<"blocks.menu-info-section"> {
+    title: string;
+    subtitle: string;
+    MenuInfo: menuInfoProps[];
+}
+
+export interface FooterProps extends Base<"blocks.footer"> {
+  footerNavigation?: FooterNavigationProps  ;
+  footerInfo?: FooterInfoProps;
+  socials?: SocialLinkProps[];
+  frase: string;
+  follow: string;
 }
