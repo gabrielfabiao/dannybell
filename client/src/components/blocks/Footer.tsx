@@ -77,7 +77,7 @@ const Footer = ({
       </div>
       <p className="text-center text-[#4d1313] py-4 pb-6 px-8">{frase}</p>
       <p className="text-[rgba(77,19,19,0.6)] text-sm text-center px-8">
-        © {year} Dannybell. All rights Reserved.
+        © {year} Dannybell.  All rights Reserved.
       </p>
     </footer>
   );
