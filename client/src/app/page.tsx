@@ -15,7 +15,6 @@ import { MenuInfoSectionProps } from "@/types"
 import { FooterProps } from "@/types";
 import type { Block, InfoBlockProps } from "@/types";
 
-
 async function loader() {
   const data = await getHomePage();
   if (!data) notFound();
