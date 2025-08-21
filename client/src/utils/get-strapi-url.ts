@@ -1,5 +1,3 @@
 export function getStrapiURL() {
-    return "https://dannybell-server.onrender.com"
-
-;
+    return process.env.STRAPI_API_URL || "http://localhost:1337";
 }
