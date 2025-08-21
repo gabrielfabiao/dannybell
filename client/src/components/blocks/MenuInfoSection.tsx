@@ -13,7 +13,7 @@ const MenuInfoSection = ({
     console.log("menu info props", title, subtitle, MenuInfo)
 
   return (
-    <section className='pt-30 lg:px-10 lg:px-60'>
+    <section className='pt-16 lg:px-10 lg:px-20'>
         <h1
         className="relative text-4xl mx-auto w-fit mb-4 font-[garamond] text-[#4d1313] 
   before:absolute before:top-0 before:left-0 before:w-full before:border-t before:border-[#4d1313]

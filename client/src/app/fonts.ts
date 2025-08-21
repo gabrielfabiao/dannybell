@@ -1,6 +1,6 @@
 
 import { EB_Garamond } from 'next/font/google'
-import { Lato } from 'next/font/google'
+import { Merriweather } from 'next/font/google'
 
 /*Lora, Imbue*/ 
 
@@ -11,8 +11,8 @@ export const garamond = EB_Garamond({
   display: 'swap',
 })
 
-export const lato = Lato({
+export const lato = Merriweather({
   subsets: ['latin'],
-  weight: ['100', '300', '400', '700', '900'],
+  weight: [ '300', '400', '700', '900'],
   display: 'swap',
 })

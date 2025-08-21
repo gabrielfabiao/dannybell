@@ -20,6 +20,9 @@
     "heading": {
       "type": "string"
     },
+    "subheading": {
+      "type": "text"
+    },
     "cta": {
       "type": "component",
       "component": "elements.link",

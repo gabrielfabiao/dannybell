@@ -71,6 +71,7 @@ export interface BlocksHeroSection extends Struct.ComponentSchema {
     logo: Schema.Attribute.Component<'elements.logo', false>;
     menu: Schema.Attribute.Component<'elements.menu-item', true>;
     price: Schema.Attribute.Decimal;
+    subheading: Schema.Attribute.Text;
     theme: Schema.Attribute.Enumeration<['brick', 'white']>;
   };
 }

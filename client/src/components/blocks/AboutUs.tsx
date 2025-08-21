@@ -1,7 +1,6 @@
 import React from "react";
 import FadeInSection from "../FadeInSection";
 import { AboutUsProps, ImageProps } from "@/types";
-import { getStrapiURL } from "@/utils/get-strapi-url";
 import Carousel from "../Carousel";
 import "../../app/aboutus.css";
 
@@ -23,7 +22,7 @@ const AboutUs = ({
   return (
     <FadeInSection>
       <section
-        className="!bg-[#ebddd3] relative pb-20 pt-30 z-0 bg-white p-0 flex-col lg:pt-25 lg:flex items-center"
+        className="!bg-[#ebddd3] relative pb-10 pt-16 z-0 bg-white p-0 flex-col lg:flex items-center"
         id="about"
       >
         <h1

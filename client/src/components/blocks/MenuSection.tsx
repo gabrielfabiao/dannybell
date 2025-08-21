@@ -5,11 +5,8 @@ import type { InfoBlockProps } from "@/types";
 import { getStrapiURL } from "@/utils/get-strapi-url";
 
 const MenuSection = ({
-  reversed,
   image,
   content,
-  cta,
-  theme,
   heading,
 }: Readonly<InfoBlockProps>) => {
   return (
@@ -20,12 +17,12 @@ const MenuSection = ({
       >
         {heading && (
           <>
-            <div className="absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black/100 to-transparent lg:opacity-0 group-hover:opacity-100 transition duration-700" />
-            <div className="absolute w-full h-1/2 bottom-0 left-0 px-4 py-2 flex justify-end flex-col">
-              <span className="text-[#ebddd3] text-md lg:opacity-0 group-hover:opacity-100 transition duration-700">
+            <div className="absolute w-full h-2/3 bottom-0 left-0 bg-gradient-to-t from-black/100 to-transparent xl:opacity-0 group-hover:opacity-100 transition duration-700" />
+            <div className="absolute w-full h-1/2 bottom-0 left-0 px-4 py-6 flex justify-end flex-col">
+              <span className="text-[#ebddd3] text-md xl:opacity-0 group-hover:opacity-100 transition duration-700 mb-2 tracking-wide">
                 {heading}
               </span>
-              <p className="text-sm text-[#ebddd3] lg:opacity-0 group-hover:opacity-100 transition duration-700 delay-75">
+              <p className="text-sm text-[#ebddd3] xl:opacity-0 group-hover:opacity-100 transition duration-700 delay-75">
                 {content}
               </p>
             </div>

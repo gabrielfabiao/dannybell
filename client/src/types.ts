@@ -80,8 +80,9 @@ export interface LogoProps {
 export interface SocialLinkProps {
   id: number;
   platform?: string;
-  url: string;
+  href: string;
   logo: ImageProps;
+  follow: string;
 }
 
 
@@ -115,6 +116,7 @@ export interface HeroSectionProps extends Base<"blocks.hero-section"> {
     date?: string;
     description?: string;
     price: number;
+    subheading: string;
 }
 
 export interface HeaderProps extends Base<"blocks.header"> {

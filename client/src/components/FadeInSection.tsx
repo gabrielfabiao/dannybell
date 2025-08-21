@@ -12,7 +12,7 @@ const FadeInSection = ({ children }: { children: React.ReactNode }) => {
     if (inView) {
       controls.start({ opacity: 1, y: 0 });
     }
-  }, [inView]);
+  }, [inView, controls]);
 
   return (
     <motion.div

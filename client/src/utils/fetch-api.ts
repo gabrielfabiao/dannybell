@@ -1,4 +1,3 @@
-import next from "next";
 
 type NextFetchRequest = {
     revalidate?: number | false;

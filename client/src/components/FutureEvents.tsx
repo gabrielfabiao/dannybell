@@ -16,12 +16,12 @@ const FutureEvents = ({ block }: FutureEventsProps) => {
   const formattedDate = eventDate.toLocaleDateString("en-GB");
 
   return (
-    <li className="grid lg:grid-cols-3 gap-4 w-full rounded-xl mb-4 p-4 bg-[rgba(77,19,19,0.2)] shadow-md hover:shadow-lg transition-shadow duration-300">
+    <li className="grid lg:grid-cols-3 gap-4 w-full rounded-xl mb-4 p-4 bg-[rgba(84,16,16,0.2)] shadow-md hover:shadow-lg transition-shadow duration-300">
       <p className="font-semibold text-lg text-[#4d1313] text-center">
         {block.title}
       </p>
-      <p className="text-gray-700">{block.description}</p>
-      <p className="text-gray-600 lg:text-right">{formattedDate}</p>
+      <p className="text-black opacity-70">{block.description}</p>
+      <p className="text-black opacity-70 lg:text-right">{formattedDate}</p>
     </li>
   );
 };

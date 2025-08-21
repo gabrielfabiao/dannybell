@@ -13,7 +13,7 @@ import { AboutUsProps } from "@/types";
 import { EventsSectionProps } from "@/types"
 import { MenuInfoSectionProps } from "@/types"
 import { FooterProps } from "@/types";
-import type { Block } from "@/types";
+import type { Block, InfoBlockProps } from "@/types";
 
 
 async function loader() {
@@ -21,6 +21,11 @@ async function loader() {
   if (!data) notFound();
 
   return { ...data.data }
+}
+
+
+function isMenuBlock(block: Block): block is InfoBlockProps {
+  return block.__component === "blocks.info-block"
 }
 
 
@@ -58,12 +63,16 @@ export default async function HomeRoute() {
   const eventsSectionBlock = blocks.find(isEventsSectionBlock)
   const menuInfoSectionBlock = blocks.find(isMenuInfoSection)
   const footerBlock = blocks.find(isFooterSection)
+  const menuBlock = blocks.filter(isMenuBlock)
+  
+  console.log("menuBlock:", menuBlock);
+
 
   return (
     <div className="relative">
       {headerBlock && <StickyHeader {...headerBlock} />}
       {heroBlock && <HeroSection {...heroBlock} />}
-      <MenuSectionWrapper blocks={blocks} />
+      {menuBlock.length > 0 && <MenuSectionWrapper blocks={menuBlock} />}
       {menuInfoSectionBlock && <MenuInfoSection {...menuInfoSectionBlock} />}
       {aboutUsBlock && <AboutUs {...aboutUsBlock} />}
       {eventsSectionBlock && <EventsSection {...eventsSectionBlock} />}

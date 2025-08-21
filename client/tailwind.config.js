@@ -1,7 +1,9 @@
-export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+module.exports = {
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'xs': {'min': '0px', 'max': '380px'},
+      },
+    },
   },
-  plugins: [],
-};
+}

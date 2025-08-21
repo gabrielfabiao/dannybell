@@ -9,6 +9,7 @@ import MenuList from '@mui/material/MenuList';
 import Stack from '@mui/material/Stack';
 import MenuIcon from '../assets/menu_icon.png'
 import useScrollDirection from '@/utils/scroll-tracker';
+import Image from 'next/image';
 import "../app/aboutus.css"
 
 
@@ -71,7 +72,7 @@ export default function MenuListComposition({
         >
         {navbar.map((option, index) => (
           <MenuItem key={index} className={`group relative ${isScrollingDown ? '!grainy-bg' : '!bg-transparent'} !text-white !font-extralight !list-none !shadow-none flex transition-all duration-500 ease-in-out hover:!bg-white hover:!text-[#4d1313]`}>
-            <a href={option?.href}><span className='mx-auto w-fit font-[lato] font-normal'>{option.title}</span></a>
+            <a href={option?.href}><span className='mx-auto w-fit font-[lato] font-normal tracking-wider'>{option.title}</span></a>
           </MenuItem>
         ))}
         </MenuList>
@@ -87,7 +88,7 @@ export default function MenuListComposition({
           aria-haspopup="true"
           onClick={handleToggle}
         >
-          <img src={MenuIcon.src} alt="Menu" />
+          <Image src={MenuIcon.src} alt="Menu" width={25} height={25}/>
         </Button>
         <Popper
           open={open}
