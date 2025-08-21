@@ -87,11 +87,11 @@ const homePageQuery = qs.stringify({
                 logo: {
                   populate: {
                     image: {
-                      fields: ["url", "alternativeText"]
+                      fields: ["url", "alternativeText"],
                     },
                   },
                 },
-              }
+              },
             },
             socials: {
               populate: {
@@ -107,27 +107,34 @@ const homePageQuery = qs.stringify({
   },
 });
 
-
 export const weeklyMenuQuery = "";
 
 export async function getHomePage() {
-  const path = "/api/home-page";
-  const BASE_URL = getStrapiURL();
+  try {
+    const path = "/api/home-page";
+    const BASE_URL = getStrapiURL();
 
-  const url = new URL(path, BASE_URL);
+    const url = new URL(path, BASE_URL);
 
-  url.search = homePageQuery;
+    url.search = homePageQuery;
 
-  return await fetchAPI(url.href, { method: "GET" });
+    return await fetchAPI(url.href, { method: "GET" });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export async function getWeeklyMenu() {
-  const path = "/api/weekly-menus";
-  const BASE_URL = getStrapiURL();
+  try {
+    const path = "/api/weekly-menus";
+    const BASE_URL = getStrapiURL();
 
-  const url = new URL(path, BASE_URL);
+    const url = new URL(path, BASE_URL);
 
-  url.search = weeklyMenuQuery;
+    url.search = weeklyMenuQuery;
 
-  return await fetchAPI(url.href, { method: "GET" });
+    return await fetchAPI(url.href, { method: "GET" });
+  } catch (error) {
+    console.log(error);
+  }
 }
