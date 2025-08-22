@@ -115,14 +115,24 @@ export async function getHomePage() {
     const BASE_URL = getStrapiURL();
 
     const url = new URL(path, BASE_URL);
-
     url.search = homePageQuery;
 
-    return await fetchAPI(url.href, { method: "GET" });
+    const res = await fetch(url.href, {
+      method: "GET",
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch home page: ${res.statusText}`);
+    }
+
+    return res.json();
   } catch (error) {
-    console.log(error);
+    console.error("Error fetching homepage:", error);
+    return null;
   }
 }
+
 
 export async function getWeeklyMenu() {
   try {
