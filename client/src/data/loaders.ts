@@ -111,7 +111,7 @@ export const weeklyMenuQuery = "";
 
 export async function getHomePage() {
   try {
-    const path = "/api/home-page";
+    const path = "api/home-page";
     const BASE_URL = getStrapiURL();
 
     const url = new URL(path, BASE_URL);
@@ -121,6 +121,8 @@ export async function getHomePage() {
       method: "GET",
       next: { revalidate: 60 },
     });
+
+    console.log(res)
 
     if (!res.ok) {
       throw new Error(`Failed to fetch home page: ${res.statusText}`);
@@ -136,7 +138,7 @@ export async function getHomePage() {
 
 export async function getWeeklyMenu() {
   try {
-    const path = "/api/weekly-menus";
+    const path = "api/weekly-menus";
     const BASE_URL = getStrapiURL();
 
     const url = new URL(path, BASE_URL);

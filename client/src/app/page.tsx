@@ -66,7 +66,6 @@ export default async function HomeRoute() {
   
   console.log("menuBlock:", menuBlock);
 
-
   return (
     <div className="relative">
       {headerBlock && <StickyHeader {...headerBlock} />}
@@ -79,5 +78,3 @@ export default async function HomeRoute() {
     </div>
   );
 }
-
-
