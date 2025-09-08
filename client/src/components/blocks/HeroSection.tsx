@@ -21,6 +21,9 @@ const HeroSection = ({
   price,
   subheading,
 }: Readonly<HeroSectionProps>) => {
+
+  console.log("url da imagem", image?.url)
+
   const transformedMenu =
     menu?.map((item) => ({
       text: item.title,
