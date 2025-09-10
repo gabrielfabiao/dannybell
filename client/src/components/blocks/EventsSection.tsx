@@ -15,7 +15,7 @@ const EventsSection = ({
     console.log("future events", futureEvent)
 
   return (
-    <section id="events-section" className='bg-[#ebddd3] pt-12 lg:px-10 mb-20'>
+    <section id="events" className='bg-[#ebddd3] pt-12 lg:px-10 mb-20'>
       <h1
         className="relative text-4xl mx-auto w-fit mb-4 font-[garamond] text-[#4d1313] 
   before:absolute before:top-0 before:left-0 before:w-full before:border-t before:border-[#4d1313]
