@@ -20,6 +20,8 @@ async function loader() {
   if (!data) notFound();
   console.log('data na homepage', data)
   
+ 
+// @ts-ignore
   return { ...data.data }
 }
 
