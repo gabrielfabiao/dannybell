@@ -18,7 +18,8 @@ import type { Block, InfoBlockProps } from "@/types";
 async function loader() {
   const data = await getHomePage();
   if (!data) notFound();
-
+  console.log('data na homepage', data)
+  
   return { ...data.data }
 }
 

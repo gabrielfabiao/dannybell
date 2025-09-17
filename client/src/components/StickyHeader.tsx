@@ -7,7 +7,8 @@ import { getStrapiURL } from "@/utils/get-strapi-url";
 import Image from "next/image";
 import HamburguerMenu from "../components/HamburguerMenu";
 import LogoBlack from "../assets/dannybell-logo.png";
-import useScrollDirection from "@/utils/scroll-tracker"; // returns boolean
+import useScrollDirection from "@/utils/scroll-tracker"; // returns boolea
+import { StrapiImage } from "./blocks/StrapiImage";
 import "../app/aboutus.css";
 
 const StickyHeader = ({ logo, navbarLink = [] }: Readonly<HeaderProps>) => {
@@ -38,14 +39,14 @@ const StickyHeader = ({ logo, navbarLink = [] }: Readonly<HeaderProps>) => {
       } transition-all duration-500 ease-in-out`}
     >
       <div className="max-w-6xl mx-auto px-4 flex h-fit justify-between items-center py-2 lg:py-0">
-        <Image
+        <StrapiImage
           className="w-30 h-auto lg:w-25 hidden lg:block"
           src={`${getStrapiURL()}${logo?.image?.url}`}
           alt={logo?.alternativeText || "Logo"}
           width={100}
           height={100}
         />
-        <Image
+        <StrapiImage
           className="w-30 h-auto lg:w-25 block lg:hidden"
           src={LogoBlack.src}
           alt={logo?.alternativeText || "Logo"}

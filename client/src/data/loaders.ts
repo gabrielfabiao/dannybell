@@ -128,7 +128,9 @@ export async function getHomePage() {
       throw new Error(`Failed to fetch home page: ${res.statusText}`);
     }
 
-    return res.json();
+    const data = await res.json();
+    console.log("resposta", data);
+
   } catch (error) {
     console.error("Error fetching homepage:", error);
     return null;

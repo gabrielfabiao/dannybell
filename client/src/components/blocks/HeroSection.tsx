@@ -74,7 +74,7 @@ const HeroSection = ({
           </div>
           <StrapiImage
             className="w-30 h-30 absolute left-1/2 -translate-x-1/2 top-12 lg:left-0 lg:translate-x-1/2 lg:w-25 lg:h-25"
-            src={`${getStrapiURL()}${logo?.image.url}`}
+            src={`${getStrapiURL()}${logo?.image}`}
             alt={logo?.alternativeText || "Logo"}
             width={100}
             height={100}
