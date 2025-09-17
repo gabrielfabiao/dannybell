@@ -21,7 +21,7 @@ async function loader() {
   console.log('data na homepage', data)
   
  
-// @ts-expect-error
+// @ts-expect-error erro
   return { ...data.data }
 }
 
